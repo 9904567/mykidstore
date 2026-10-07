@@ -1,0 +1,3308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambini Vegan | Pure Care. Little Smiles.</title>
+    <!-- Google Fonts for warm, premium, baby-friendly typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5A7E64;          /* Soft Sage Green */
+            --primary-light: #EBF2EC;    /* Delicate Mint Mist */
+            --primary-hover: #486650;
+            --secondary: #E89A84;        /* Gentle Peach */
+            --secondary-light: #FDF1ED;
+            --cream: #FAF7F2;            /* Cream background */
+            --cream-card: #FFFFFF;
+            --neutral-bg: #F4EFEA;       /* Warm oat beige */
+            --text-dark: #2A332C;        /* Deep charcoal green */
+            --text-muted: #6B776E;       /* Soft slate green */
+            --border: #E8E3DC;           /* Subtle warm border */
+            --gold: #F4B23F;
+            --danger: #D9534F;
+            --shadow-sm: 0 2px 8px rgba(42, 51, 44, 0.04);
+            --shadow-md: 0 8px 24px rgba(42, 51, 44, 0.08);
+            --shadow-lg: 0 16px 40px rgba(42, 51, 44, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --font-display: 'Quicksand', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        button, input, select {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1260px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .top-bar {
+            background: #486650;
+            color: #FAF7F2;
+            font-size: 0.82rem;
+            text-align: center;
+            padding: 7px 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .top-bar strong {
+            color: #FFDFB9;
+        }
+
+        header.site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 0;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary-light);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            border: 2px solid #D2E4D6;
+        }
+
+        .logo-text h1 {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.1;
+        }
+
+        .logo-text h1 span {
+            color: var(--primary);
+        }
+
+        .logo-text p {
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .header-search {
+            flex: 1;
+            max-width: 520px;
+            position: relative;
+        }
+
+        .header-search input {
+            width: 100%;
+            padding: 12px 48px 12px 18px;
+            border-radius: var(--radius-full);
+            border: 1.5px solid var(--border);
+            background: #FFFFFF;
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .header-search input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(90, 126, 100, 0.15);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .action-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: var(--radius-full);
+            background: transparent;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+        }
+
+        .action-btn:hover {
+            background: var(--neutral-bg);
+        }
+
+        .action-icon {
+            font-size: 1.25rem;
+            display: inline-block;
+        }
+
+        .badge-count {
+            position: absolute;
+            top: 2px;
+            right: 4px;
+            background: var(--secondary);
+            color: #FFFFFF;
+            font-size: 0.68rem;
+            font-weight: 700;
+            min-width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 4px;
+        }
+
+        .hamburger-btn {
+            display: none;
+            font-size: 1.6rem;
+            padding: 6px;
+            color: var(--text-dark);
+        }
+
+        .header-nav {
+            border-top: 1px solid var(--border);
+            padding: 10px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none;
+        }
+        .header-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 6px 4px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .nav-pill-badge {
+            background: var(--secondary-light);
+            color: var(--secondary);
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #F4ECE1 0%, #EBF2EC 60%, #FBF0EC 100%);
+            border-radius: var(--radius-lg);
+            margin: 20px auto 40px;
+            padding: 60px 40px;
+            overflow: hidden;
+            border: 1px solid rgba(90, 126, 100, 0.12);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.05;
+            background-image: radial-gradient(#2A332C 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 18px;
+            border: 1px solid #D7E5DB;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .hero-title em {
+            font-style: normal;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 13px 28px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 14px rgba(90, 126, 100, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(90, 126, 100, 0.35);
+        }
+
+        .btn-secondary {
+            background: #FFFFFF;
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 13px 26px;
+            border-radius: var(--radius-full);
+            border: 1.5px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-stats {
+            margin-top: 32px;
+            display: flex;
+            gap: 28px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .stat-item h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .stat-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-card-img {
+            width: 100%;
+            max-width: 440px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 6px solid #FFFFFF;
+        }
+
+        .hero-floating-tag {
+            position: absolute;
+            background: #FFFFFF;
+            border-radius: var(--radius-md);
+            padding: 10px 16px;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: floatSlow 4s ease-in-out infinite alternate;
+        }
+
+        .tag-leaf {
+            bottom: 20px;
+            left: -15px;
+        }
+
+        .tag-smile {
+            top: 25px;
+            right: -10px;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatSlow {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-8px); }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 34px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 18px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-card:hover, .category-card.active {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+            background: var(--primary-light);
+        }
+
+        .cat-icon-wrap {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--neutral-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .cat-icon-wrap {
+            background: #FFFFFF;
+            transform: scale(1.1);
+        }
+
+        .category-name {
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .why-vegan-section {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 50px 36px;
+            margin-bottom: 60px;
+            border: 1px solid var(--border);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 20px 14px;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            border: 1px solid #EDE8E1;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+            border-color: var(--primary);
+        }
+
+        .value-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .value-card h3 {
+            font-size: 0.96rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .value-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            gap: 30px;
+            align-items: start;
+            margin-bottom: 70px;
+        }
+
+        .filter-sidebar {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            position: sticky;
+            top: 130px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-header-row h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .reset-filter-btn {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .filter-group {
+            margin-bottom: 22px;
+        }
+
+        .filter-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        .filter-option input[type="checkbox"], .filter-option input[type="radio"] {
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .price-range-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .price-slider {
+            width: 100%;
+            accent-color: var(--primary);
+        }
+
+        .price-label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Products Display Area */
+        .products-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .shop-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #FFFFFF;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+        }
+
+        .results-count {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .results-count strong {
+            color: var(--text-dark);
+        }
+
+        .sort-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sort-wrapper label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .sort-select {
+            padding: 8px 14px;
+            border-radius: var(--radius-full);
+            border: 1.5px solid var(--border);
+            font-size: 0.85rem;
+            background: #FFFFFF;
+            color: var(--text-dark);
+            outline: none;
+            cursor: pointer;
+        }
+
+        .sort-select:focus {
+            border-color: var(--primary);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: #D3E0D6;
+        }
+
+        .card-top {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background: #FAF7F2;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .product-card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .badge-list {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 2;
+        }
+
+        .product-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-vegan {
+            background: #2A332C;
+            color: #A9D6B3;
+        }
+
+        .badge-sale {
+            background: var(--secondary);
+            color: #FFFFFF;
+        }
+
+        .badge-new {
+            background: #F4B23F;
+            color: #2A332C;
+        }
+
+        .wishlist-btn-corner {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 34px;
+            height: 34px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9AA59D;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .wishlist-btn-corner:hover {
+            transform: scale(1.15);
+            color: var(--secondary);
+        }
+
+        .wishlist-btn-corner.active {
+            color: #E24A4A;
+        }
+
+        .quick-view-overlay-btn {
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(42, 51, 44, 0.9);
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: var(--transition);
+            z-index: 3;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .product-card:hover .quick-view-overlay-btn {
+            bottom: 12px;
+        }
+
+        .card-details {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-cat-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .product-name {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.35;
+            margin-bottom: 6px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.7em;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .review-count {
+            color: var(--text-muted);
+        }
+
+        .price-box {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-top: auto;
+            margin-bottom: 14px;
+        }
+
+        .final-price {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .old-price {
+            font-size: 0.85rem;
+            color: #9BA49C;
+            text-decoration: line-through;
+        }
+
+        .discount-tag {
+            font-size: 0.72rem;
+            color: #D35400;
+            font-weight: 700;
+            background: #FDF1ED;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .add-cart-btn {
+            width: 100%;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 10px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.85rem;
+            border: 1px solid #D2E3D6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-cart-btn:hover {
+            background: var(--primary);
+            color: #FFFFFF;
+        }
+
+        /* Empty state notice */
+        .empty-results {
+            text-align: center;
+            padding: 60px 20px;
+            background: #FFFFFF;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border);
+            grid-column: 1 / -1;
+        }
+
+        .empty-results-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .empty-results h4 {
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+        }
+
+        .offers-banner {
+            background: linear-gradient(135deg, #FAF1EB 0%, #F5ECE3 100%);
+            border: 2px dashed #E0C9BA;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 70px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .offer-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.85rem;
+            color: #7B3E2C;
+            margin-bottom: 8px;
+        }
+
+        .offer-info p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+        }
+
+        .offer-perks-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .perk-pill {
+            background: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #8C4835;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timer-box {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .timer-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            margin-bottom: 14px;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .timer-slot {
+            background: var(--neutral-bg);
+            padding: 10px 4px;
+            border-radius: var(--radius-sm);
+        }
+
+        .timer-num {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+
+        .timer-unit {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .horizontal-section {
+            margin-bottom: 70px;
+        }
+
+        .horizontal-scroll-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) transparent;
+        }
+
+        .horizontal-scroll-container .product-card {
+            min-width: 250px;
+            max-width: 250px;
+            flex-shrink: 0;
+        }
+
+        .reviews-section {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 50px 30px;
+            border: 1px solid var(--border);
+            margin-bottom: 70px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .review-card {
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            border: 1px solid #ECE7DF;
+            position: relative;
+        }
+
+        .review-stars {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .review-text {
+            font-size: 0.88rem;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .reviewer-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .verified-badge {
+            font-size: 0.72rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .review-product-tag {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .newsletter-section {
+            background: linear-gradient(135deg, #4A6C54 0%, #35503D 100%);
+            color: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 50px 30px;
+            text-align: center;
+            margin-bottom: 70px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .newsletter-section h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-section p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            max-width: 520px;
+            margin: 0 auto 24px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 460px;
+            margin: 0 auto;
+            gap: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 13px 20px;
+            border-radius: var(--radius-full);
+            border: none;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form button {
+            background: var(--secondary);
+            color: #FFFFFF;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: var(--radius-full);
+        }
+
+        .newsletter-form button:hover {
+            background: #E2866D;
+        }
+
+        .newsletter-msg {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-height: 20px;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            background: #232B25;
+            color: #E2E8E4;
+            padding: 60px 0 30px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            color: #A9B5AB;
+            margin: 14px 0 20px;
+            line-height: 1.5;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            font-size: 0.85rem;
+            color: #A9B5AB;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+            padding-left: 4px;
+        }
+
+        .contact-list {
+            font-size: 0.85rem;
+            color: #A9B5AB;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+        }
+
+        .social-btn:hover {
+            background: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #8C998F;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(23, 29, 24, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-window {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 820px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.95) translateY(15px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-backdrop.active .modal-window {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-full);
+            background: var(--neutral-bg);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .modal-close-btn:hover {
+            background: #E0D9D0;
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 30px;
+            padding: 34px;
+        }
+
+        .modal-img-wrap {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--cream);
+            aspect-ratio: 1 / 1;
+        }
+
+        .modal-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-badges {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+
+        .modal-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .modal-specs {
+            background: var(--cream);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 18px;
+            font-size: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .modal-qty-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .qty-picker {
+            display: flex;
+            align-items: center;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .qty-picker button {
+            width: 36px;
+            height: 36px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+        }
+
+        .qty-picker button:hover {
+            background: var(--neutral-bg);
+        }
+
+        .qty-picker input {
+            width: 44px;
+            text-align: center;
+            border: none;
+            outline: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .modal-action-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .modal-action-buttons button {
+            flex: 1;
+            padding: 13px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(23, 29, 24, 0.5);
+            backdrop-filter: blur(3px);
+            z-index: 1050;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: -460px;
+            width: 100%;
+            max-width: 420px;
+            height: 100vh;
+            background: #FFFFFF;
+            z-index: 1100;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .drawer.active {
+            right: 0;
+        }
+
+        .drawer-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .drawer-header h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cart-item-card {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 14px;
+            align-items: center;
+            background: var(--cream);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid #ECE7DF;
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            background: #FFFFFF;
+        }
+
+        .cart-item-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .cart-item-price {
+            font-size: 0.86rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .cart-qty-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .remove-cart-item {
+            color: #9AA59D;
+            font-size: 1.1rem;
+            padding: 4px;
+        }
+
+        .remove-cart-item:hover {
+            color: var(--danger);
+        }
+
+        .drawer-footer {
+            padding: 20px 24px;
+            border-top: 1px solid var(--border);
+            background: var(--cream);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 14px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .checkout-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        .empty-drawer-msg {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-drawer-msg span {
+            font-size: 2.8rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* Wishlist Item Card */
+        .wishlist-item-card {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 12px;
+            align-items: center;
+            background: var(--cream);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            border: 1px solid #ECE7DF;
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1200;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .toast-message {
+            background: #2A332C;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-lg);
+            font-size: 0.86rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            pointer-events: auto;
+            border-left: 4px solid var(--primary);
+        }
+
+        @keyframes toastIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .floating-mobile-cart {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--primary);
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-lg);
+            z-index: 95;
+            font-weight: 700;
+            font-size: 0.9rem;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: #FFFFFF;
+            color: var(--text-dark);
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 90;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-visual {
+                margin-top: 20px;
+            }
+            .hero-card-img {
+                max-width: 340px;
+                height: 300px;
+            }
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
+            .filter-sidebar {
+                position: static;
+                display: none; /* toggleable or inline */
+            }
+            .filter-sidebar.mobile-open {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .offers-banner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                flex-wrap: wrap;
+            }
+            .header-search {
+                order: 3;
+                max-width: 100%;
+                width: 100%;
+            }
+            .hamburger-btn {
+                display: block;
+            }
+            .header-nav {
+                display: none;
+            }
+            .header-nav.mobile-active {
+                display: block;
+            }
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 10px 0;
+            }
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .modal-body {
+                grid-template-columns: 1fr;
+                padding: 22px;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .floating-mobile-cart {
+                display: flex;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        🌿 <strong>Pure Care. Little Smiles.</strong> Flat 20% Off On All Plant-Based Newborn Essentials | Use Code <strong>VEGANBABY</strong>
+    </div>
+
+    <header class="site-header" id="mainHeader">
+        <div class="container">
+            <div class="header-main">
+                <!-- Mobile Hamburger -->
+                <button class="hamburger-btn" id="mobileMenuBtn" aria-label="Toggle menu">☰</button>
+
+                <!-- Brand Logo -->
+                <a href="#home" class="logo-wrap">
+                    <div class="logo-icon">🌱</div>
+                    <div class="logo-text">
+                        <h1>Bambini <span>Vegan</span></h1>
+                        <p>Pure Care. Little Smiles.</p>
+                    </div>
+                </a>
+
+                <!-- Search Bar -->
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Search for vegan baby products (e.g. shampoo, romper, oil)..." autocomplete="off">
+                    <button class="search-btn" id="searchSubmitBtn" aria-label="Search">🔍</button>
+                </div>
+
+                <!-- Account / Wishlist / Cart Actions -->
+                <div class="header-actions">
+                    <button class="action-btn" id="accountBtn" title="Account">
+                        <span class="action-icon">👤</span>
+                        <span style="display: none;" class="desktop-text">Account</span>
+                    </button>
+
+                    <button class="action-btn" id="wishlistTriggerBtn" title="Wishlist">
+                        <span class="action-icon">🤍</span>
+                        <span class="badge-count" id="wishlistCount">0</span>
+                    </button>
+
+                    <button class="action-btn" id="cartTriggerBtn" title="Shopping Cart">
+                        <span class="action-icon">🛒</span>
+                        <span class="badge-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="header-nav" id="headerNav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#shop" class="nav-link">Shop All</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Baby Clothing">Baby Clothing</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Bath & Care">Bath & Care</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Feeding">Feeding</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Toys">Toys</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Essentials">Baby Essentials</a></li>
+                    <li><a href="#shop" class="nav-link nav-filter-link" data-cat="Organic Food">Organic Food</a></li>
+                    <li><a href="#offers" class="nav-link">Offers <span class="nav-pill-badge">20% Off</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="container">
+            <div class="hero">
+                <div class="hero-pattern"></div>
+                <div class="hero-content">
+                    <div>
+                        <div class="hero-badge">
+                            <span>🌱</span> Certified 100% Plant-Based & Cruelty-Free
+                        </div>
+                        <h2 class="hero-title">
+                            Pure Products for <em>Tiny Humans</em>
+                        </h2>
+                        <p class="hero-subtitle">
+                            Safe, gentle & vegan baby care made with love for your little one. Thoughtfully crafted from organic bamboo, chamomile, and cold-pressed botanical oils.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#shop" class="btn-primary">
+                                Shop Now <span>→</span>
+                            </a>
+                            <a href="#whyVegan" class="btn-secondary">
+                                Explore Vegan Promise
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <h4>50K+</h4>
+                                <p>Happy Babies</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100%</h4>
+                                <p>Toxin & Cruelty Free</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>4.9 ★</h4>
+                                <p>Parents' Trust</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <img 
+                            src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=80" 
+                            alt="Happy smiling infant in cozy organic cotton" 
+                            class="hero-card-img"
+                            onerror="this.src='https://placehold.co/600x500/E8F0EA/486650?text=Bambini+Pure+Baby'"
+                        >
+                        <div class="hero-floating-tag tag-leaf">
+                            <span style="font-size: 1.4rem;">🌿</span>
+                            <div>
+                                <strong style="font-size: 0.8rem; display:block;">Pediatrician Approved</strong>
+                                <small style="color:var(--text-muted); font-size:0.7rem;">Ultra gentle on skin</small>
+                            </div>
+                        </div>
+                        <div class="hero-floating-tag tag-smile">
+                            <span style="font-size: 1.4rem;">🐰</span>
+                            <div>
+                                <strong style="font-size: 0.8rem; display:block;">PETA Cruelty-Free</strong>
+                                <small style="color:var(--text-muted); font-size:0.7rem;">Never tested on animals</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 50px;">
+            <div class="section-header">
+                <h2>Explore Gentle Categories</h2>
+                <p>Specially curated collections designed to keep your little angel nurtured and comfortable.</p>
+            </div>
+            <div class="categories-grid" id="categoryGrid">
+                <!-- Injected via JavaScript for sync with filters -->
+            </div>
+        </section>
+
+        <section class="container" id="whyVegan">
+            <div class="why-vegan-section">
+                <div class="section-header" style="margin-bottom: 10px;">
+                    <h2>The Bambini Vegan Promise</h2>
+                    <p>Why modern, conscious parents choose our ethical, non-toxic formulations and fabrics.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <span class="value-icon">🌱</span>
+                        <h3>100% Vegan</h3>
+                        <p>Zero animal derivatives, lanolin, beeswax, or milk enzymes.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🐰</span>
+                        <h3>Cruelty Free</h3>
+                        <p>Certified compassionate care with zero animal testing.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🌿</span>
+                        <h3>Natural Ingredients</h3>
+                        <p>Infused with pure shea butter, calendula & soothing aloe vera.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">♻️</span>
+                        <h3>Eco Friendly</h3>
+                        <p>Biodegradable bamboo fibers and recyclable packaging.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">🧴</span>
+                        <h3>Baby Safe</h3>
+                        <p>Dermatologically tested, hypoallergenic & pH balanced 5.5.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">❤️</span>
+                        <h3>Made With Love</h3>
+                        <p>Crafted by parents, chemists & pediatricians who care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="shop">
+            <div class="section-header">
+                <h2>Our Pure Collection</h2>
+                <p>Every product is certified organic, 100% vegan, and crafted with delicate newborn skin in mind.</p>
+            </div>
+
+            <div class="shop-container">
+                <!-- Sidebar Filters -->
+                <aside class="filter-sidebar" id="filterSidebar">
+                    <div class="filter-header-row">
+                        <h3>Filters</h3>
+                        <button class="reset-filter-btn" id="resetFiltersBtn">Reset All</button>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">Category</div>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="all" checked> All Categories
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Baby Clothing"> Baby Clothing
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Bath & Care"> Bath & Care
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Feeding"> Feeding
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Toys"> Toys
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Essentials"> Essentials
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterCat" value="Organic Food"> Organic Food
+                        </label>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">
+                            <span>Max Price</span>
+                            <span id="priceDisplay">₹1,500</span>
+                        </div>
+                        <div class="price-range-wrap">
+                            <input type="range" class="price-slider" id="priceRange" min="200" max="1500" step="50" value="1500">
+                            <div class="price-label-row">
+                                <span>₹200</span>
+                                <span>₹1,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Age Group Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">Age Suitability</div>
+                        <label class="filter-option">
+                            <input type="checkbox" class="age-filter" value="0-6 Months"> 0 - 6 Months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="age-filter" value="6-12 Months"> 6 - 12 Months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="age-filter" value="12-24 Months"> 12 - 24 Months
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" class="age-filter" value="Toddler (2Y+)"> Toddler (2Y+)
+                        </label>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="filter-group">
+                        <div class="filter-title">Special Badges</div>
+                        <label class="filter-option">
+                            <input type="checkbox" id="organicOnly"> 🌿 100% Organic Certified
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" id="veganPurity"> 🌱 PETA Vegan Approved
+                        </label>
+                    </div>
+
+                    <!-- Rating Filter -->
+                    <div class="filter-group">
+                        <div class="filter-title">Minimum Rating</div>
+                        <label class="filter-option">
+                            <input type="radio" name="ratingFilter" value="0" checked> Any Rating
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="ratingFilter" value="4.5"> 4.5 ★ & above
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="ratingFilter" value="4.0"> 4.0 ★ & above
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- Products Grid & Controls -->
+                <div class="products-area">
+                    <div class="shop-controls">
+                        <div class="results-count" id="resultsCount">
+                            Showing <strong>12</strong> vegan products
+                        </div>
+                        <div class="sort-wrapper">
+                            <label for="sortSelect">Sort By:</label>
+                            <select id="sortSelect" class="sort-select">
+                                <option value="popularity">Popularity</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                                <option value="new">New Arrivals</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products dynamically rendered -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="offers">
+            <div class="offers-banner">
+                <div class="offer-info">
+                    <h3>Special Bundle & Save Offer 🎁</h3>
+                    <p>Upgrade to clean, natural infant care. Stock up on bath foams, organic bamboo wear, and soothing balms today.</p>
+                    <div class="offer-perks-row">
+                        <span class="perk-pill">FLAT 20% OFF CODE: VEGANBABY</span>
+                        <span class="perk-pill">BUY 2 GET 1 FREE ON SHAMPOOS</span>
+                        <span class="perk-pill">FREE DELIVERY ABOVE ₹999</span>
+                    </div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-title">⚡ Flash Deal Ends In:</div>
+                    <div class="countdown-grid">
+                        <div class="timer-slot">
+                            <div class="timer-num" id="timerHours">14</div>
+                            <div class="timer-unit">Hours</div>
+                        </div>
+                        <div class="timer-slot">
+                            <div class="timer-num" id="timerMinutes">38</div>
+                            <div class="timer-unit">Mins</div>
+                        </div>
+                        <div class="timer-slot">
+                            <div class="timer-num" id="timerSeconds">45</div>
+                            <div class="timer-unit">Secs</div>
+                        </div>
+                        <div class="timer-slot">
+                            <div class="timer-num">100%</div>
+                            <div class="timer-unit">Vegan</div>
+                        </div>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="quickFilterSale()">
+                        Claim Flash Offer Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container horizontal-section">
+            <div class="section-header">
+                <h2>Parents' Favorites ⭐️</h2>
+                <p>The highest rated and most repeated essentials trusted by thousands of loving caregivers.</p>
+            </div>
+            <div class="horizontal-scroll-container" id="bestsellersSlider">
+                <!-- Injected via JavaScript -->
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="reviews-section">
+                <div class="section-header">
+                    <h2>Loved by Gentle Parents</h2>
+                    <p>Real stories from moms and dads who made the pure, toxin-free choice for their infants.</p>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Absolutely loved the baby lotion and wash. It feels incredibly gentle on my 3-month-old's sensitive skin and the mild natural chamomile aroma is so calming."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">PS</div>
+                            <div>
+                                <div class="reviewer-name">Pooja Sharma</div>
+                                <div class="verified-badge">✓ Verified Buyer</div>
+                                <div class="review-product-tag">Purchased: Natural Baby Body Lotion</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The bamboo rompers are softer than any high-end cotton brand we've tried. No harsh dyes, breathable in hot weather, and washes like a dream."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">RK</div>
+                            <div>
+                                <div class="reviewer-name">Rohan & Kriti</div>
+                                <div class="verified-badge">✓ Verified Buyer</div>
+                                <div class="review-product-tag">Purchased: Organic Bamboo Baby Romper</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Finding certified vegan diaper cream without lanolin or beeswax was so hard until I discovered Bambini Vegan. Healed redness within hours!"</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">AN</div>
+                            <div>
+                                <div class="reviewer-name">Ananya Nair</div>
+                                <div class="verified-badge">✓ Verified Buyer</div>
+                                <div class="review-product-tag">Purchased: Vegan Baby Diaper Cream</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"The bamboo feeding spoon and bibs are fantastic. Zero plastic smell, ergonomic for tiny toddler hands, and very eco-friendly."</p>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">VM</div>
+                            <div>
+                                <div class="reviewer-name">Dr. Vikram Mathur</div>
+                                <div class="verified-badge">✓ Verified Buyer (Pediatrician)</div>
+                                <div class="review-product-tag">Purchased: Bamboo Feeding Spoon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="newsletter-section">
+                <h3>Get 10% OFF Your First Order</h3>
+                <p>Join our conscious parenting circle for holistic child wellness tips, natural care guides, and exclusive flash discounts.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="newsletter-msg" id="newsletterMsg"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrap">
+                        <div class="logo-icon" style="background:#334237; color:#A9D6B3; border-color:#485C4E;">🌱</div>
+                        <div class="logo-text">
+                            <h2 style="font-size: 1.35rem; color:#FFFFFF;">Bambini <span style="color:#A9D6B3;">Vegan</span></h2>
+                            <p style="color:#E89A84;">Pure Care. Little Smiles.</p>
+                        </div>
+                    </div>
+                    <p>India's trusted destination for certified vegan, organic, and toxin-free baby products. Gentle on tender skin, kind to nature.</p>
+                    <div class="social-icons">
+                        <a href="#instagram" class="social-btn" title="Instagram">📷</a>
+                        <a href="#facebook" class="social-btn" title="Facebook">📘</a>
+                        <a href="#pinterest" class="social-btn" title="Pinterest">📌</a>
+                        <a href="#youtube" class="social-btn" title="YouTube">▶️</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Shop Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop" onclick="filterByFooterCat('Baby Clothing')">Baby Clothing</a></li>
+                        <li><a href="#shop" onclick="filterByFooterCat('Bath & Care')">Bath & Body Care</a></li>
+                        <li><a href="#shop" onclick="filterByFooterCat('Feeding')">Natural Feeding</a></li>
+                        <li><a href="#shop" onclick="filterByFooterCat('Toys')">Non-Toxic Toys</a></li>
+                        <li><a href="#shop" onclick="filterByFooterCat('Essentials')">Baby Essentials</a></li>
+                        <li><a href="#offers">Special Offers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Customer Care</h4>
+                    <ul class="footer-links">
+                        <li><a href="#track">Track Your Order</a></li>
+                        <li><a href="#shipping">Shipping Policy</a></li>
+                        <li><a href="#returns">Returns & Easy Replacements</a></li>
+                        <li><a href="#faqs">Frequently Asked Questions</a></li>
+                        <li><a href="#help">Help Center & Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Our Ethos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#whyVegan">Our Vegan Promise</a></li>
+                        <li><a href="#sustainability">Zero-Waste Packaging</a></li>
+                        <li><a href="#safety">Pediatric Safety Standards</a></li>
+                        <li><a href="#privacy">Privacy & Terms</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="contact-list">
+                        <p>💌 care@bambinivegan.com</p>
+                        <p>📞 +91 1800 234 8899 (Toll Free)</p>
+                        <p>📍 Bambini Natural Labs, Green Park Avenue, Bengaluru, Karnataka, India</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Bambini Vegan India Pvt. Ltd. All Rights Reserved. Pure Care for Little Smiles.</div>
+                <div>Designed with 100% Compassion for Planet Earth & Tender Babies 🌍</div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-backdrop" id="quickViewModal">
+        <div class="modal-window">
+            <button class="modal-close-btn" id="closeModalBtn" aria-label="Close dialog">✕</button>
+            <div class="modal-body" id="modalDynamicContent">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+
+    <div class="drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3>🛒 Your Basket (<span id="drawerCartCount">0</span>)</h3>
+            <button class="modal-close-btn" style="position:static;" id="closeCartBtn">✕</button>
+        </div>
+        <div class="drawer-body" id="cartItemsContainer">
+            <!-- Injected via JavaScript -->
+        </div>
+        <div class="drawer-footer" id="cartFooter">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Promotional Discount (20%)</span>
+                <span id="cartDiscount" style="color: #2E7D32;">- ₹0</span>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Delivery</span>
+                <span id="cartDelivery">FREE</span>
+            </div>
+            <div class="summary-total">
+                <span>Final Total</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">
+                Proceed to Secure Checkout 🔒
+            </button>
+        </div>
+    </div>
+
+    <div class="drawer" id="wishlistDrawer">
+        <div class="drawer-header">
+            <h3>🤍 Saved Wishlist (<span id="drawerWishlistCount">0</span>)</h3>
+            <button class="modal-close-btn" style="position:static;" id="closeWishlistBtn">✕</button>
+        </div>
+        <div class="drawer-body" id="wishlistItemsContainer">
+            <!-- Injected via JavaScript -->
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+
+    <button class="floating-mobile-cart" id="floatingCartBtn">
+        <span>🛒</span>
+        <span>Cart</span>
+        <span class="badge-count" id="mobileCartCount" style="position: static; margin-left: 4px;">0</span>
+    </button>
+
+    <button class="back-to-top" id="backToTopBtn" title="Back to top">↑</button>
+
+    <script>
+        const PRODUCTS = [
+            {
+                id: 1,
+                name: "Organic Bamboo Baby Romper",
+                category: "Baby Clothing",
+                price: 799,
+                originalPrice: 999,
+                rating: 4.9,
+                reviews: 142,
+                image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=600&q=80",
+                description: "Buttery-soft, hypoallergenic bamboo viscose romper with dual two-way zipper for lightning-fast midnight diaper changes. Unbleached and chemical-free.",
+                ingredients: "95% Pure Organic Bamboo Viscose, 5% Elastane for cozy stretch.",
+                veganCert: "100% Plant Bamboo • PETA Certified",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "BESTSELLER"
+            },
+            {
+                id: 2,
+                name: "Gentle Calendula Vegan Baby Shampoo",
+                category: "Bath & Care",
+                price: 399,
+                originalPrice: 499,
+                rating: 4.8,
+                reviews: 218,
+                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=80",
+                description: "Tear-free, pH 5.5 botanical foam wash that cleanses delicate scalp without stripping natural hydration. Enriched with organic German chamomile.",
+                ingredients: "Organic Calendula Flower Extract, Aloe Vera Leaf Juice, Coconut-derived Glucosides.",
+                veganCert: "100% Cruelty Free • Zero Animal Keratin",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "TOP RATED"
+            },
+            {
+                id: 3,
+                name: "Natural Shea & Oat Baby Body Lotion",
+                category: "Bath & Care",
+                price: 499,
+                originalPrice: 649,
+                rating: 4.9,
+                reviews: 310,
+                image: "https://images.unsplash.com/photo-1608248597359-33512e9b8969?auto=format&fit=crop&w=600&q=80",
+                description: "Deep moisture barrier protection formulated for eczema-prone baby skin. Completely non-greasy, fast-absorbing natural formula.",
+                ingredients: "Cold-Pressed Fairtrade Shea Butter, Colloidal Oatmeal, Virgin Jojoba Oil.",
+                veganCert: "No Beeswax • No Lanolin",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "VEGAN CHOICE"
+            },
+            {
+                id: 4,
+                name: "Organic Muslin Cotton Bib Set (Pack of 3)",
+                category: "Feeding",
+                price: 449,
+                originalPrice: 599,
+                rating: 4.7,
+                reviews: 89,
+                image: "https://images.unsplash.com/photo-1584839619946-b63567784ec8?auto=format&fit=crop&w=600&q=80",
+                description: "Super absorbent 6-layer organic muslin cotton bandana bibs. Gentle around baby's neck with adjustable nickel-free snap buttons.",
+                ingredients: "GOTS Certified 100% Unbleached Organic Cotton.",
+                veganCert: "No Silk Fibers • Natural Vegetable Dyes",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "POPULAR"
+            },
+            {
+                id: 5,
+                name: "Ergonomic Bamboo Feeding Spoon Set",
+                category: "Feeding",
+                price: 349,
+                originalPrice: 449,
+                rating: 4.8,
+                reviews: 74,
+                image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
+                description: "Food-grade silicone tips paired with smooth organic bamboo handles. Soft on teething gums and promotes baby-led weaning independence.",
+                ingredients: "Sustainable Bamboo Wood, Platinum Cured Food-Grade Silicone.",
+                veganCert: "Zero Plastic Microparticles • Non-toxic",
+                ageGroup: "6-12 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "NEW"
+            },
+            {
+                id: 6,
+                name: "Plant-Based Biodegradable Baby Wipes (Pack of 72)",
+                category: "Essentials",
+                price: 299,
+                originalPrice: 349,
+                rating: 4.9,
+                reviews: 420,
+                image: "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=600&q=80",
+                description: "99.2% purified water wipes made of renewable plant viscose. 100% home compostable and completely alcohol & fragrance free.",
+                ingredients: "99.2% Medical Grade Purified Water, Organic Aloe, Vitamin E.",
+                veganCert: "100% Plastic Free Viscose • Compostable",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "BESTSELLER"
+            },
+            {
+                id: 7,
+                name: "Herbal Botanical Baby Massage Oil",
+                category: "Bath & Care",
+                price: 599,
+                originalPrice: 799,
+                rating: 4.9,
+                reviews: 185,
+                image: "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=600&q=80",
+                description: "Traditional Ayurvedic cold-pressed sesame and sweet almond blend infused with ashwagandha roots for muscle strengthening and peaceful sleep.",
+                ingredients: "Organic Sweet Almond Oil, Sesame Seed Oil, Ashwagandha Extract.",
+                veganCert: "Cold-Pressed • Zero Mineral Oils",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "TOP RATED"
+            },
+            {
+                id: 8,
+                name: "Organic Cotton Swaddle Blanket Set",
+                category: "Baby Clothing",
+                price: 899,
+                originalPrice: 1199,
+                rating: 4.8,
+                reviews: 160,
+                image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80",
+                description: "Extra large 120x120cm breathable muslin blankets that recreate the warm security of the womb to reduce startle reflex.",
+                ingredients: "100% GOTS Certified Organic Cotton Yarn.",
+                veganCert: "Ethical Weave • No Animal Sizing agents",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "VEGAN CHOICE"
+            },
+            {
+                id: 9,
+                name: "Handcrafted Wooden Eco Rattle",
+                category: "Toys",
+                price: 499,
+                originalPrice: 649,
+                rating: 4.9,
+                reviews: 98,
+                image: "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80",
+                description: "Sustainably harvested neem wood rattle with gentle bell chime. Smoothly polished with organic flaxseed oil and safe for teething gums.",
+                ingredients: "Natural Antibacterial Neem Wood, Flaxseed Oil Finish.",
+                veganCert: "Zero Shellac Polish • 100% Vegan Woodcraft",
+                ageGroup: "6-12 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "NEW"
+            },
+            {
+                id: 10,
+                name: "Zinc-Free Soothing Diaper Rash Balm",
+                category: "Essentials",
+                price: 449,
+                originalPrice: 549,
+                rating: 4.8,
+                reviews: 240,
+                image: "https://images.unsplash.com/photo-1563178406-4cdc2923acbc?auto=format&fit=crop&w=600&q=80",
+                description: "Protective vegan barrier salve formulated with organic olive wax and tea tree hydrosol to instantly soothe dampness and chafing.",
+                ingredients: "Candelilla Plant Wax, Coconut Oil, Chamomile Flower Oil.",
+                veganCert: "100% Free of Lanolin, Beeswax & Petroleum",
+                ageGroup: "0-6 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "BESTSELLER"
+            },
+            {
+                id: 11,
+                name: "Organic Sprouted Ragi Baby Porridge Mix",
+                category: "Organic Food",
+                price: 299,
+                originalPrice: 380,
+                rating: 4.9,
+                reviews: 175,
+                image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80",
+                description: "Sprouted finger millet baby cereal rich in bioavailable calcium and iron. Easy digestion with zero added refined sugars or milk powders.",
+                ingredients: "100% Certified Organic Sprouted Ragi Flour, Cardamom Pods.",
+                veganCert: "100% Dairy-Free • Lactose-Free",
+                ageGroup: "6-12 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "VEGAN CHOICE"
+            },
+            {
+                id: 12,
+                name: "Cozy Knit Organic Cotton Baby Blanket",
+                category: "Baby Clothing",
+                price: 1199,
+                originalPrice: 1499,
+                rating: 5.0,
+                reviews: 112,
+                image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=600&q=80",
+                description: "Cellular knit pattern designed for year-round temperature regulation in baby cots and strollers. Cloud-like softness.",
+                ingredients: "100% Organic Combed Cotton Knit.",
+                veganCert: "PETA Vegan Certified • No Wool",
+                ageGroup: "12-24 Months",
+                isOrganic: true,
+                isVegan: true,
+                badge: "TOP RATED"
+            }
+        ];
+
+        /* Categories metadata for dynamic rendering */
+        const CATEGORIES = [
+            { name: "Baby Clothing", icon: "👶" },
+            { name: "Bath & Care", icon: "🫧" },
+            { name: "Feeding", icon: "🍼" },
+            { name: "Toys", icon: "🧸" },
+            { name: "Essentials", icon: "🧴" },
+            { name: "Organic Food", icon: "🥣" }
+        ];
+
+        let state = {
+            cart: JSON.parse(localStorage.getItem('bambini_cart')) || [],
+            wishlist: JSON.parse(localStorage.getItem('bambini_wishlist')) || [],
+            recentlyViewed: JSON.parse(localStorage.getItem('bambini_recent')) || [],
+            filters: {
+                search: '',
+                category: 'all',
+                maxPrice: 1500,
+                ages: [],
+                organicOnly: false,
+                veganOnly: false,
+                minRating: 0
+            },
+            sortBy: 'popularity'
+        };
+
+        function saveState() {
+            localStorage.setItem('bambini_cart', JSON.stringify(state.cart));
+            localStorage.setItem('bambini_wishlist', JSON.stringify(state.wishlist));
+            localStorage.setItem('bambini_recent', JSON.stringify(state.recentlyViewed));
+        }
+
+        function renderCategoryCards() {
+            const grid = document.getElementById('categoryGrid');
+            if (!grid) return;
+
+            grid.innerHTML = CATEGORIES.map(cat => `
+                <div class="category-card ${state.filters.category === cat.name ? 'active' : ''}" onclick="selectCategory('${cat.name}')">
+                    <div class="cat-icon-wrap">${cat.icon}</div>
+                    <div class="category-name">${cat.name}</div>
+                </div>
+            `).join('');
+        }
+
+        function selectCategory(catName) {
+            state.filters.category = (state.filters.category === catName) ? 'all' : catName;
+            
+            // Sync radio button
+            const radios = document.querySelectorAll('input[name="filterCat"]');
+            radios.forEach(r => {
+                r.checked = (r.value === state.filters.category);
+            });
+
+            renderCategoryCards();
+            renderProducts();
+            
+            // Scroll smoothly to shop if clicked from categories block
+            const shopSec = document.getElementById('shop');
+            if (shopSec) shopSec.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function getFilteredProducts() {
+            return PRODUCTS.filter(p => {
+                // Search query match
+                if (state.filters.search.trim() !== '') {
+                    const q = state.filters.search.toLowerCase();
+                    const matchName = p.name.toLowerCase().includes(q);
+                    const matchCat = p.category.toLowerCase().includes(q);
+                    const matchDesc = p.description.toLowerCase().includes(q);
+                    if (!matchName && !matchCat && !matchDesc) return false;
+                }
+
+                // Category filter
+                if (state.filters.category !== 'all' && p.category !== state.filters.category) {
+                    return false;
+                }
+
+                // Max price
+                if (p.price > state.filters.maxPrice) {
+                    return false;
+                }
+
+                // Age groups
+                if (state.filters.ages.length > 0 && !state.filters.ages.includes(p.ageGroup)) {
+                    return false;
+                }
+
+                // Organic flag
+                if (state.filters.organicOnly && !p.isOrganic) {
+                    return false;
+                }
+
+                // Vegan purity flag
+                if (state.filters.veganOnly && !p.isVegan) {
+                    return false;
+                }
+
+                // Rating
+                if (p.rating < state.filters.minRating) {
+                    return false;
+                }
+
+                return true;
+            }).sort((a, b) => {
+                if (state.sortBy === 'price-low') return a.price - b.price;
+                if (state.sortBy === 'price-high') return b.price - a.price;
+                if (state.sortBy === 'rating') return b.rating - a.rating;
+                if (state.sortBy === 'new') return b.id - a.id;
+                // Default: popularity by review count
+                return b.reviews - a.reviews;
+            });
+        }
+
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const countLabel = document.getElementById('resultsCount');
+            const filtered = getFilteredProducts();
+
+            countLabel.innerHTML = `Showing <strong>${filtered.length}</strong> vegan product${filtered.length === 1 ? '' : 's'}`;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-results">
+                        <div class="empty-results-icon">🍃</div>
+                        <h4>No matching vegan products found</h4>
+                        <p style="color:var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">Try adjusting your search criteria or resetting filters.</p>
+                        <button class="btn-primary" onclick="resetAllFilters()">Reset All Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => {
+                const isWishlisted = state.wishlist.some(item => item.id === product.id);
+                const discountPct = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+
+                return `
+                    <div class="product-card" data-id="${product.id}">
+                        <div class="card-top">
+                            <img 
+                                src="${product.image}" 
+                                alt="${product.name}" 
+                                class="card-img" 
+                                loading="lazy" 
+                                onerror="this.src='https://placehold.co/400x400/F5EFE6/486650?text=${encodeURIComponent(product.name)}'"
+                            >
+                            <div class="badge-list">
+                                <span class="product-badge badge-vegan">🌱 Vegan</span>
+                                ${product.badge ? `<span class="product-badge badge-${product.badge === 'BESTSELLER' ? 'sale' : 'new'}">${product.badge}</span>` : ''}
+                            </div>
+                            <button 
+                                class="wishlist-btn-corner ${isWishlisted ? 'active' : ''}" 
+                                onclick="toggleWishlist(${product.id})" 
+                                title="${isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}"
+                            >
+                                ${isWishlisted ? '❤️' : '🤍'}
+                            </button>
+                            <button class="quick-view-overlay-btn" onclick="openQuickView(${product.id})">
+                                Quick View 👁️
+                            </button>
+                        </div>
+                        <div class="card-details">
+                            <span class="card-cat-label">${product.category}</span>
+                            <h3 class="product-name" onclick="openQuickView(${product.id})" style="cursor:pointer;">${product.name}</h3>
+                            <div class="rating-row">
+                                <span class="stars">★ ${product.rating.toFixed(1)}</span>
+                                <span class="review-count">(${product.reviews})</span>
+                            </div>
+                            <div class="price-box">
+                                <span class="final-price">₹${product.price}</span>
+                                <span class="old-price">₹${product.originalPrice}</span>
+                                <span class="discount-tag">${discountPct}% OFF</span>
+                            </div>
+                            <button class="add-cart-btn" onclick="addToCart(${product.id})">
+                                <span>🛒</span> Add To Basket
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderBestsellers() {
+            const container = document.getElementById('bestsellersSlider');
+            if (!container) return;
+
+            const popularItems = PRODUCTS.filter(p => p.reviews > 150);
+
+            container.innerHTML = popularItems.map(p => {
+                const isWishlisted = state.wishlist.some(item => item.id === p.id);
+                return `
+                    <div class="product-card">
+                        <div class="card-top">
+                            <img src="${p.image}" alt="${p.name}" class="card-img" onerror="this.src='https://placehold.co/400x400/EAF0EB/486650?text=Bambini+Vegan'">
+                            <button class="wishlist-btn-corner ${isWishlisted ? 'active' : ''}" onclick="toggleWishlist(${p.id})">
+                                ${isWishlisted ? '❤️' : '🤍'}
+                            </button>
+                            <button class="quick-view-overlay-btn" onclick="openQuickView(${p.id})">Quick View</button>
+                        </div>
+                        <div class="card-details">
+                            <span class="card-cat-label">${p.category}</span>
+                            <h4 class="product-name" onclick="openQuickView(${p.id})" style="cursor:pointer;">${p.name}</h4>
+                            <div class="rating-row">
+                                <span class="stars">★ ${p.rating}</span>
+                                <span class="review-count">(${p.reviews})</span>
+                            </div>
+                            <div class="price-box">
+                                <span class="final-price">₹${p.price}</span>
+                                <span class="old-price">₹${p.originalPrice}</span>
+                            </div>
+                            <button class="add-cart-btn" onclick="addToCart(${p.id})">
+                                Add To Basket
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        let currentModalProduct = null;
+        let modalQuantity = 1;
+
+        function openQuickView(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            currentModalProduct = product;
+            modalQuantity = 1;
+
+            // Track into recently viewed in state
+            if (!state.recentlyViewed.includes(productId)) {
+                state.recentlyViewed.unshift(productId);
+                if (state.recentlyViewed.length > 8) state.recentlyViewed.pop();
+                saveState();
+            }
+
+            const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+            const content = document.getElementById('modalDynamicContent');
+
+            content.innerHTML = `
+                <div class="modal-img-wrap">
+                    <img src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/500x500/F5EFE6/486650?text=Bambini+Vegan'">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-badges">
+                        <span class="product-badge badge-vegan">🌱 100% Plant-Based</span>
+                        <span class="product-badge badge-sale">${discount}% OFF</span>
+                    </div>
+                    <h2 class="modal-title">${product.name}</h2>
+                    <div class="rating-row">
+                        <span class="stars">★★★★★</span>
+                        <span style="font-weight:700;">${product.rating}</span>
+                        <span class="review-count">(${product.reviews} verified parents)</span>
+                    </div>
+                    <div class="price-box" style="margin: 10px 0;">
+                        <span class="final-price" style="font-size: 1.5rem;">₹${product.price}</span>
+                        <span class="old-price" style="font-size: 1rem;">₹${product.originalPrice}</span>
+                        <span class="discount-tag">Save ₹${product.originalPrice - product.price}</span>
+                    </div>
+                    <p class="modal-desc">${product.description}</p>
+                    
+                    <div class="modal-specs">
+                        <div><strong>🌿 Ingredients:</strong> ${product.ingredients}</div>
+                        <div><strong>🌱 Purity Certification:</strong> ${product.veganCert}</div>
+                        <div><strong>👶 Recommended Age:</strong> ${product.ageGroup}</div>
+                    </div>
+
+                    <div class="modal-qty-row">
+                        <span style="font-size: 0.88rem; font-weight:700;">Quantity:</span>
+                        <div class="qty-picker">
+                            <button onclick="changeModalQty(-1)">-</button>
+                            <input type="text" id="modalQtyInput" value="1" readonly>
+                            <button onclick="changeModalQty(1)">+</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-action-buttons">
+                        <button class="btn-primary" onclick="addModalProductToCart()">Add To Cart 🛒</button>
+                        <button class="btn-secondary" onclick="buyNowModalProduct()" style="border-color:var(--primary); color:var(--primary); font-weight:700;">Buy Now ⚡</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quickViewModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function changeModalQty(delta) {
+            modalQuantity = Math.max(1, modalQuantity + delta);
+            const input = document.getElementById('modalQtyInput');
+            if (input) input.value = modalQuantity;
+        }
+
+        function closeQuickView() {
+            document.getElementById('quickViewModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function addModalProductToCart() {
+            if (currentModalProduct) {
+                addToCart(currentModalProduct.id, modalQuantity);
+                closeQuickView();
+            }
+        }
+
+        function buyNowModalProduct() {
+            if (currentModalProduct) {
+                addToCart(currentModalProduct.id, modalQuantity);
+                closeQuickView();
+                openCart();
+            }
+        }
+
+        function addToCart(productId, qty = 1) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingIndex = state.cart.findIndex(item => item.id === productId);
+            if (existingIndex > -1) {
+                state.cart[existingIndex].quantity += qty;
+            } else {
+                state.cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: qty
+                });
+            }
+
+            saveState();
+            updateCartUI();
+            showToast(`🌿 Added "${product.name}" to cart!`);
+        }
+
+        function updateCartQuantity(productId, delta) {
+            const item = state.cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += delta;
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            saveState();
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            state.cart = state.cart.filter(item => item.id !== productId);
+            saveState();
+            updateCartUI();
+            showToast("Item removed from your cart.");
+        }
+
+        function updateCartUI() {
+            const totalCount = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+            
+            // Header counters
+            document.getElementById('cartCount').textContent = totalCount;
+            document.getElementById('drawerCartCount').textContent = totalCount;
+            const mobileCount = document.getElementById('mobileCartCount');
+            if (mobileCount) mobileCount.textContent = totalCount;
+
+            const container = document.getElementById('cartItemsContainer');
+            const footer = document.getElementById('cartFooter');
+
+            if (state.cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-drawer-msg">
+                        <span>🛒</span>
+                        <h4>Your shopping basket is empty</h4>
+                        <p style="font-size: 0.85rem; margin-top:6px;">Gentle plant-powered products are waiting for your little bundle of joy!</p>
+                        <button class="btn-primary" style="margin-top: 18px;" onclick="closeCart(); location.href='#shop';">Shop Now</button>
+                    </div>
+                `;
+                if (footer) footer.style.display = 'none';
+                return;
+            }
+
+            if (footer) footer.style.display = 'block';
+
+            // Calculate totals
+            const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const discount = Math.round(subtotal * 0.10); // 10% welcome savings
+            const delivery = subtotal >= 999 ? 0 : 99;
+            const finalTotal = subtotal - discount + delivery;
+
+            container.innerHTML = state.cart.map(item => `
+                <div class="cart-item-card">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='https://placehold.co/100x100/F5EFE6/486650?text=Item'">
+                    <div>
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₹${item.price}</div>
+                        <div class="cart-item-actions">
+                            <button class="cart-qty-btn" onclick="updateCartQuantity(${item.id}, -1)">-</button>
+                            <span style="font-size:0.85rem; font-weight:700;">${item.quantity}</span>
+                            <button class="cart-qty-btn" onclick="updateCartQuantity(${item.id}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-cart-item" onclick="removeFromCart(${item.id})" title="Remove item">🗑️</button>
+                </div>
+            `).join('');
+
+            document.getElementById('cartSubtotal').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+            document.getElementById('cartDiscount').textContent = `- ₹${discount.toLocaleString('en-IN')}`;
+            document.getElementById('cartDelivery').textContent = delivery === 0 ? "FREE" : `₹${delivery}`;
+            document.getElementById('cartTotal').textContent = `₹${finalTotal.toLocaleString('en-IN')}`;
+        }
+
+        function openCart() {
+            closeWishlist();
+            document.getElementById('cartDrawer').classList.add('active');
+            document.getElementById('drawerOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartDrawer').classList.remove('active');
+            document.getElementById('drawerOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleWishlist(productId) {
+            const product = PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+
+            const idx = state.wishlist.findIndex(item => item.id === productId);
+            if (idx > -1) {
+                state.wishlist.splice(idx, 1);
+                showToast(`Removed "${product.name}" from your wishlist.`);
+            } else {
+                state.wishlist.push(product);
+                showToast(`❤️ Added "${product.name}" to your wishlist!`);
+            }
+
+            saveState();
+            updateWishlistUI();
+            renderProducts();
+            renderBestsellers();
+        }
+
+        function updateWishlistUI() {
+            const count = state.wishlist.length;
+            document.getElementById('wishlistCount').textContent = count;
+            document.getElementById('drawerWishlistCount').textContent = count;
+
+            const container = document.getElementById('wishlistItemsContainer');
+            if (state.wishlist.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-drawer-msg">
+                        <span>🤍</span>
+                        <h4>Your wishlist is empty</h4>
+                        <p style="font-size: 0.85rem; margin-top:6px;">Tap the heart on any item you want to keep track of for your little one.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = state.wishlist.map(item => `
+                <div class="wishlist-item-card">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='https://placehold.co/100x100/F5EFE6/486650?text=Item'">
+                    <div>
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">₹${item.price}</div>
+                        <button class="add-cart-btn" style="padding: 4px 10px; font-size: 0.72rem; margin-top:6px;" onclick="addToCart(${item.id}); toggleWishlist(${item.id});">
+                            Move to Basket 🛒
+                        </button>
+                    </div>
+                    <button class="remove-cart-item" onclick="toggleWishlist(${item.id})" title="Remove item">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function openWishlist() {
+            closeCart();
+            document.getElementById('wishlistDrawer').classList.add('active');
+            document.getElementById('drawerOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeWishlist() {
+            document.getElementById('wishlistDrawer').classList.remove('active');
+            document.getElementById('drawerOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.innerHTML = `<span>✨</span><span>${message}</span>`;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px)';
+                setTimeout(() => toast.remove(), 400);
+            }, 3000);
+        }
+
+        function initCountdownTimer() {
+            let totalSeconds = (14 * 3600) + (38 * 60) + 45;
+
+            function updateDisplay() {
+                if (totalSeconds <= 0) totalSeconds = 24 * 3600; // loop flash sale
+                
+                const hrs = Math.floor(totalSeconds / 3600);
+                const mins = Math.floor((totalSeconds % 3600) / 60);
+                const secs = totalSeconds % 60;
+
+                const hrsEl = document.getElementById('timerHours');
+                const minsEl = document.getElementById('timerMinutes');
+                const secsEl = document.getElementById('timerSeconds');
+
+                if (hrsEl) hrsEl.textContent = String(hrs).padStart(2, '0');
+                if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+                if (secsEl) secsEl.textContent = String(secs).padStart(2, '0');
+
+                totalSeconds--;
+            }
+
+            updateDisplay();
+            setInterval(updateDisplay, 1000);
+        }
+
+        function quickFilterSale() {
+            state.filters.category = 'all';
+            state.filters.maxPrice = 600;
+            const priceSlider = document.getElementById('priceRange');
+            if (priceSlider) {
+                priceSlider.value = 600;
+                document.getElementById('priceDisplay').textContent = '₹600';
+            }
+            renderProducts();
+            const shop = document.getElementById('shop');
+            if (shop) shop.scrollIntoView({ behavior: 'smooth' });
+            showToast("Showing items under ₹600 for the Flash Offer!");
+        }
+
+        function filterByFooterCat(categoryName) {
+            selectCategory(categoryName);
+        }
+
+        function resetAllFilters() {
+            state.filters = {
+                search: '',
+                category: 'all',
+                maxPrice: 1500,
+                ages: [],
+                organicOnly: false,
+                veganOnly: false,
+                minRating: 0
+            };
+            state.sortBy = 'popularity';
+
+            // Reset inputs
+            document.getElementById('searchInput').value = '';
+            document.getElementById('priceRange').value = 1500;
+            document.getElementById('priceDisplay').textContent = '₹1,500';
+            document.getElementById('sortSelect').value = 'popularity';
+            document.getElementById('organicOnly').checked = false;
+            document.getElementById('veganPurity').checked = false;
+
+            document.querySelectorAll('input[name="filterCat"]').forEach(r => r.checked = (r.value === 'all'));
+            document.querySelectorAll('.age-filter').forEach(c => c.checked = false);
+            document.querySelectorAll('input[name="ratingFilter"]').forEach(r => r.checked = (r.value === '0'));
+
+            renderCategoryCards();
+            renderProducts();
+            showToast("All filters have been reset.");
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial renders
+            renderCategoryCards();
+            renderProducts();
+            renderBestsellers();
+            updateCartUI();
+            updateWishlistUI();
+            initCountdownTimer();
+
+            // Search input bindings
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                state.filters.search = e.target.value;
+                renderProducts();
+            });
+
+            // Category filter radio buttons
+            document.querySelectorAll('input[name="filterCat"]').forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    state.filters.category = e.target.value;
+                    renderCategoryCards();
+                    renderProducts();
+                });
+            });
+
+            // Nav links filter click
+            document.querySelectorAll('.nav-filter-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const cat = e.currentTarget.getAttribute('data-cat');
+                    selectCategory(cat);
+                });
+            });
+
+            // Price range slider
+            const priceSlider = document.getElementById('priceRange');
+            const priceDisplay = document.getElementById('priceDisplay');
+            priceSlider.addEventListener('input', (e) => {
+                const val = Number(e.target.value);
+                state.filters.maxPrice = val;
+                priceDisplay.textContent = `₹${val.toLocaleString('en-IN')}`;
+                renderProducts();
+            });
+
+            // Age checkboxes
+            document.querySelectorAll('.age-filter').forEach(box => {
+                box.addEventListener('change', () => {
+                    const selected = Array.from(document.querySelectorAll('.age-filter:checked')).map(b => b.value);
+                    state.filters.ages = selected;
+                    renderProducts();
+                });
+            });
+
+            // Special badges
+            document.getElementById('organicOnly').addEventListener('change', (e) => {
+                state.filters.organicOnly = e.target.checked;
+                renderProducts();
+            });
+            document.getElementById('veganPurity').addEventListener('change', (e) => {
+                state.filters.veganOnly = e.target.checked;
+                renderProducts();
+            });
+
+            // Rating radios
+            document.querySelectorAll('input[name="ratingFilter"]').forEach(r => {
+                r.addEventListener('change', (e) => {
+                    state.filters.minRating = Number(e.target.value);
+                    renderProducts();
+                });
+            });
+
+            // Sort dropdown
+            document.getElementById('sortSelect').addEventListener('change', (e) => {
+                state.sortBy = e.target.value;
+                renderProducts();
+            });
+
+            // Reset filters button
+            document.getElementById('resetFiltersBtn').addEventListener('click', resetAllFilters);
+
+            // Drawer and Modal Openers/Closers
+            document.getElementById('cartTriggerBtn').addEventListener('click', openCart);
+            document.getElementById('closeCartBtn').addEventListener('click', closeCart);
+            document.getElementById('floatingCartBtn').addEventListener('click', openCart);
+
+            document.getElementById('wishlistTriggerBtn').addEventListener('click', openWishlist);
+            document.getElementById('closeWishlistBtn').addEventListener('click', closeWishlist);
+
+            document.getElementById('drawerOverlay').addEventListener('click', () => {
+                closeCart();
+                closeWishlist();
+            });
+
+            document.getElementById('closeModalBtn').addEventListener('click', closeQuickView);
+            document.getElementById('quickViewModal').addEventListener('click', (e) => {
+                if (e.target.id === 'quickViewModal') closeQuickView();
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const headerNav = document.getElementById('headerNav');
+            mobileMenuBtn.addEventListener('click', () => {
+                headerNav.classList.toggle('mobile-active');
+            });
+
+            // Account click simulation
+            document.getElementById('accountBtn').addEventListener('click', () => {
+                showToast("👋 Welcome to Bambini Vegan Care Club! Logged in as Guest.");
+            });
+
+            // Checkout button simulation
+            document.getElementById('checkoutBtn').addEventListener('click', () => {
+                if (state.cart.length === 0) return;
+                showToast("🎉 Thank you! Redirecting to 100% Encrypted Checkout...");
+                setTimeout(() => {
+                    state.cart = [];
+                    saveState();
+                    updateCartUI();
+                    closeCart();
+                    showToast("Order placed successfully! Order ID: #BV-98214");
+                }, 1800);
+            });
+
+            // Newsletter subscription validation
+            const newsletterForm = document.getElementById('newsletterForm');
+            const newsletterMsg = document.getElementById('newsletterMsg');
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletterEmail');
+                const email = emailInput.value.trim();
+
+                if (email && email.includes('@') && email.includes('.')) {
+                    newsletterMsg.style.color = '#B4F0C3';
+                    newsletterMsg.textContent = '🎉 Welcome to the circle! Coupon code VEGANBABY has been sent to your email.';
+                    emailInput.value = '';
+                    showToast("Subscribed! Enjoy your 10% discount on first order.");
+                } else {
+                    newsletterMsg.style.color = '#FFB3B3';
+                    newsletterMsg.textContent = 'Please enter a valid email address.';
+                }
+            });
+
+            // Back to top button visibility and action
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
